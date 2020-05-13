@@ -1,0 +1,6 @@
+package com.example.emoji_menu
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
