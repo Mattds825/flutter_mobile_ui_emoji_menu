@@ -12,6 +12,7 @@ class _FoodTabState extends State<FoodTab> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade800,
        body: ListView(
          children: <Widget>[
            _buildListItem('Hotdog', 4.0, '6', 'assets/images/hotdog.png'),
@@ -52,6 +53,7 @@ class _FoodTabState extends State<FoodTab> {
                       style: TextStyle(
                         fontSize: 14.0,
                         fontWeight: FontWeight.w400,
+                        color: Colors.white70
                       ),
                     ),
                     SmoothStarRating(
@@ -98,7 +100,7 @@ class _FoodTabState extends State<FoodTab> {
             child: Center(
               child: Icon(Icons.add, color: Colors.white,),
             ),
-            backgroundColor: Color(0xFFFE7D6A),
+            backgroundColor: Colors.greenAccent,
           ),
         ],
       ),

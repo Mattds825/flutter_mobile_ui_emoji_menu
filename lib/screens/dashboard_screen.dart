@@ -4,17 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DashBoardScreen extends StatefulWidget {
-
   @override
   _DashBoardScreenState createState() => _DashBoardScreenState();
 }
 
-class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProviderStateMixin{
-
+class _DashBoardScreenState extends State<DashBoardScreen>
+    with SingleTickerProviderStateMixin {
   TabController tabController;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     tabController = TabController(vsync: this, length: 4);
   }
@@ -22,6 +21,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey.shade800,
       body: ListView(
         children: <Widget>[
           Padding(
@@ -29,7 +29,10 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Icon(Icons.menu, color: Colors.black,),
+                Icon(
+                  Icons.menu,
+                  color: Colors.white70,
+                ),
                 Container(
                   height: 50.0,
                   width: 50.0,
@@ -39,7 +42,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
                         color: Colors.grey.withOpacity(0.3),
                         blurRadius: 6.0,
                         spreadRadius: 4.0,
-                        offset: Offset(0.0,3.0),
+                        offset: Offset(0.0, 3.0),
                       ),
                     ],
                     color: Color(0xFFC6E7FE),
@@ -54,26 +57,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15.0,),
+            padding: const EdgeInsets.only(
+              left: 15.0,
+            ),
             child: Text(
               'Search For',
               style: TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 27.0,
-              ),
+                  fontWeight: FontWeight.w800,
+                  fontSize: 27.0,
+                  color: Colors.white),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 15.0,),
+            padding: const EdgeInsets.only(
+              left: 15.0,
+            ),
             child: Text(
               'Recipes',
               style: TextStyle(
-                fontWeight: FontWeight.w800,
-                fontSize: 27.0,
-              ),
+                  fontWeight: FontWeight.w800,
+                  fontSize: 27.0,
+                  color: Colors.white),
             ),
           ),
-          SizedBox(height: 25.0,),
+          SizedBox(
+            height: 25.0,
+          ),
           Padding(
             padding: EdgeInsets.only(left: 15.0, right: 15.0),
             child: Container(
@@ -85,17 +94,20 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search',
-                  hintStyle: TextStyle(
-                    fontSize: 14.0
-                  ),
+                  hintStyle: TextStyle(fontSize: 14.0, color: Colors.white60),
                   border: InputBorder.none,
                   fillColor: Colors.grey.withOpacity(0.5),
-                  prefixIcon: Icon(Icons.search, color: Colors.grey,),
+                  prefixIcon: Icon(
+                    Icons.search,
+                    color: Colors.grey,
+                  ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 20.0,),
+          SizedBox(
+            height: 20.0,
+          ),
           Padding(
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
@@ -103,6 +115,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.w500,
+                color: Colors.white,
               ),
             ),
           ),
@@ -112,13 +125,18 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: <Widget>[
-                _buildListItem('Hamburger', 'assets/images/burger.png', '10', Colors.orangeAccent.withOpacity(0.3), Colors.orange),
-                _buildListItem('Fires', 'assets/images/fries.png', '10', Colors.blueAccent.withOpacity(0.3), Colors.blue),
-                _buildListItem('Doughnut', 'assets/images/doughnut.png', '10', Colors.greenAccent.withOpacity(0.3), Colors.green),
+                _buildListItem('Hamburger', 'assets/images/burger.png', '10',
+                    Colors.orangeAccent.withOpacity(0.3), Colors.orange),
+                _buildListItem('Fires', 'assets/images/fries.png', '10',
+                    Colors.blueAccent.withOpacity(0.3), Colors.blue),
+                _buildListItem('Doughnut', 'assets/images/doughnut.png', '10',
+                    Colors.greenAccent.withOpacity(0.3), Colors.green),
               ],
             ),
           ),
-          SizedBox(height: 10.0,),
+          SizedBox(
+            height: 10.0,
+          ),
           Padding(
             padding: EdgeInsets.only(left: 15.0),
             child: TabBar(
@@ -132,10 +150,30 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
                 fontWeight: FontWeight.w500,
               ),
               tabs: <Widget>[
-                Tab(child: Text('Featured'),),
-                Tab(child: Text('Combo'),),
-                Tab(child: Text('Favorites'),),
-                Tab(child: Text('Recommended'),),
+                Tab(
+                  child: Text(
+                    'Featured',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Combo',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Favorites',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Recommended',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
               ],
             ),
           ),
@@ -156,14 +194,14 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
     );
   }
 
-
-  _buildListItem(String foodName, String img, String price, Color c,Color textColor){
+  _buildListItem(
+      String foodName, String img, String price, Color c, Color textColor) {
     return Padding(
       padding: EdgeInsets.only(left: 15.0),
       child: InkWell(
-        onTap: (){
+        onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ItemPage(img,foodName,price,foodName),
+            builder: (context) => ItemPage(img, foodName, price, foodName),
           ));
         },
         child: Container(
@@ -186,11 +224,17 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
                     shape: BoxShape.circle,
                   ),
                   child: Center(
-                    child: Image.asset(img, height: 50.0, width: 50.0,),
+                    child: Image.asset(
+                      img,
+                      height: 50.0,
+                      width: 50.0,
+                    ),
                   ),
                 ),
               ),
-              SizedBox(height: 25.0,),
+              SizedBox(
+                height: 25.0,
+              ),
               Text(
                 foodName,
                 style: TextStyle(
@@ -199,7 +243,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
                 ),
               ),
               Text(
-                '\$'+price,
+                '\$' + price,
                 style: TextStyle(
                   fontSize: 17.0,
                   color: textColor,
@@ -211,5 +255,4 @@ class _DashBoardScreenState extends State<DashBoardScreen> with SingleTickerProv
       ),
     );
   }
-
 }
